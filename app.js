@@ -12,9 +12,13 @@ app.get('/', (req, res) => {
     res.json('Hello World !')
 })
 
-const coworkingRouter = require('./coworkingRoutes/coworkingRoutes')
+const coworkingRouter = require('./routes/coworkingRoutes')
 
 app.use('/api/coworkings', coworkingRouter)
+
+const userRouter = require('./routes/userRoutes')
+
+app.use('/api/users', userRouter)
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
