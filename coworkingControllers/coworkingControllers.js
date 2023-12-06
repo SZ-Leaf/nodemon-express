@@ -26,12 +26,27 @@ const findCoworkingByPk = (req, res) => {
 }
 
 const createCoworking = (req, res) => {
+
+    console.log(req.headers.authorization);
+    if(!req.headers.authorization){
+        return res.status(401).json({message: 'You are not logged in'})
+    }
+
+    const token = req.headers.authorization.split(' ')[1]
+    if(token){
+        try{
+            const decode = jwt.verify(token, 'secret_key');
+        }
+        catch(error){
+            res.status(403).json({message: `You are not authorized`})
+        }
+    }
+
     const newCoworking = { ...req.body }
-    // console.log(req.headers.authentication)
 
     Coworking.create(newCoworking)
         .then((coworking) => {
-            res.json({ message: 'Le coworking a bien été créé', data: coworking })
+            res.status(201).json({ message: 'Le coworking a bien été créé', data: coworking })
             console.log(coworking)
         })
         .catch((error) => {

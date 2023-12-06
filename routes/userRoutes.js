@@ -3,10 +3,16 @@ const router = express.Router()
 
 const { findAllUsers, findUserByPk, createUser, updateUser, deleteUser } = require('../coworkingControllers/userControllers')
 
+const {login} = require('../coworkingControllers/authControllers')
+
 router
     .route('/')
     .get(findAllUsers)
     .post(createUser)
+
+router
+    .route('/login')
+    .post(login)
 
 router
     .route('/:id')
@@ -14,8 +20,5 @@ router
     .put(updateUser)
     .delete(deleteUser)
 
-router
-   .route('/login')
-   // .post(login)
 
 module.exports = router
