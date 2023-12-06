@@ -1,5 +1,6 @@
 // const { Op } = require('sequelize')
-const { Coworking } = require('../db/sequelizeSetup')
+const { Coworking } = require('../db/sequelizeSetup');
+const jwt = require('jsonwebtoken');
 
 const findAllCoworkings = (req, res) => {
     Coworking.findAll()
