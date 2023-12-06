@@ -52,7 +52,7 @@ const coworkings = [
    {
        id: 15,
        name: "Locomotiv'",
-       price: { "hour": null, "day": 40, "month": 300 },
+       price: { "hour": 5, "day": 40, "month": 300 },
        address: { "number": "4", "street": "cours de l'Intendance", "postCode": 33000, "city": "Bordeaux" },
        picture: "",
        superficy: 600,
@@ -72,7 +72,7 @@ const coworkings = [
    {
        id: 17,
        name: "WIGI - Grands-Hommes",
-       price: { "hour": 4.8, " day": 24, "month": 240 },
+       price: { "hour": 4.8, "day": null, "month": 240 },
        address: { "number": "26", "street": "rue Condillac", "postCode": 33000, "city": "Bordeaux" },
        picture: "",
        superficy: 200,
@@ -92,7 +92,7 @@ const coworkings = [
    {
        id: 19,
        name: "WIGI - Wilson",
-       price: { "hour": 4.8, " day": 24, "month": 240 },
+       price: { "hour": 4.8, "day": null, "month": 240 },
        address: { "number": "71", "street": "boulevard du Président Wilson", "postCode": 33000, "city": "Bordeaux" },
        picture: "",
        superficy: 220,

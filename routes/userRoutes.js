@@ -14,4 +14,8 @@ router
     .put(updateUser)
     .delete(deleteUser)
 
+router
+   .route('/login')
+   // .post(login)
+
 module.exports = router
