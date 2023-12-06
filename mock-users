@@ -1,0 +1,16 @@
+const users = [
+   {
+      username: 'First',
+      password: 'firstpassword'
+   },
+   {
+      username: 'Second',
+      password: 'secondpassword'
+   },
+   {
+      username: 'Third',
+      password: 'thirdpassword'
+   }
+]
+
+module.exports = users

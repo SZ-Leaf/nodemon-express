@@ -1,29 +1,17 @@
 const express = require('express')
 const router = express.Router()
 
-router
-   .route('/')
-   .get((req, res) => {
-      res.json('Page to Get User')
-      console.log('Page to Get User')  
-   })
-   .post((req, res) =>{
-      res.json('Page to Post/Create')
-   })
-   
+const { findAllUsers, findUserByPk, createUser, updateUser, deleteUser } = require('../coworkingControllers/userControllers')
 
 router
-   .route('/:id')
-   .get((req, res) => {
-      res.json('Page to Find user by ID')
-   })
-   .put((req, res) => {
-      res.json('Page to edit user by id')
-   })
-   .delete((req, res) => {
-      res.json('Page to Delete by ID')
-   })
+    .route('/')
+    .get(findAllUsers)
+    .post(createUser)
 
-
+router
+    .route('/:id')
+    .get(findUserByPk)
+    .put(updateUser)
+    .delete(deleteUser)
 
 module.exports = router
